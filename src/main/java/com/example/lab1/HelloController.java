@@ -11,8 +11,13 @@ public class HelloController {
 
    @GetMapping("/")
    public String hello(@RequestParam(required = false) String q) {
-      return helloWorld + q;
-   }
 
+      if(q!=null){
+         return helloWorld + q;
+      }
+      else {
+         return helloWorld;
+      }
+   }
 
 }
